@@ -41,4 +41,7 @@ def solve_puzzle():
     return jsonify({'words': results})
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5001)
+    # Use environment variable for debug mode, default to False in production
+    import os
+    debug_mode = os.environ.get('FLASK_DEBUG', 'False').lower() == 'true'
+    app.run(debug=debug_mode, port=5001)

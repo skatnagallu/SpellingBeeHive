@@ -1,14 +1,22 @@
 import sys
 
-def load_words(path="/usr/share/dict/words"):
-    """Loads words from the system dictionary."""
-    try:
-        with open(path, 'r') as f:
-            # Read all words, strip whitespace, and convert to lowercase
-            return [line.strip().lower() for line in f]
-    except FileNotFoundError:
-        print(f"Error: Dictionary file not found at {path}")
-        sys.exit(1)
+import os
+
+def load_words():
+    """Loads words from the local dictionary or system dictionary."""
+    paths = ["dictionary.txt", "/usr/share/dict/words"]
+    
+    for path in paths:
+        if os.path.exists(path):
+            try:
+                with open(path, 'r') as f:
+                    # Read all words, strip whitespace, and convert to lowercase
+                    return [line.strip().lower() for line in f]
+            except Exception as e:
+                print(f"Warning: Failed to read {path}: {e}")
+    
+    print("Error: No dictionary file found.")
+    sys.exit(1)
 
 def solve(central_letter, other_letters, words):
     """
