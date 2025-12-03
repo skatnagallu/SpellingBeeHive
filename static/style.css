@@ -199,10 +199,21 @@ h2 {
     border-radius: 16px;
     width: 90%;
     max-width: 500px;
+    max-height: 90vh;
+    /* Limit height to viewport */
+    display: flex;
+    flex-direction: column;
     position: relative;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     transform: scale(1);
     transition: transform 0.3s ease;
+}
+
+#modal-body {
+    overflow-y: auto;
+    /* Enable scrolling for content */
+    padding-right: 0.5rem;
+    /* Space for scrollbar */
 }
 
 .modal.hidden .modal-content {
