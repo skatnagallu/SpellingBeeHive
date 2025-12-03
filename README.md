@@ -6,6 +6,7 @@ A Python-based solver for the NYT Spelling Bee puzzle, featuring a command-line 
 
 - **Solver Logic**: Efficiently finds words from the system dictionary that match Spelling Bee criteria.
 - **Web Interface**: Clean, modern web app to interact with the solver.
+- **Live Demo**: [Try it now on Render](https://spellingbeehive.onrender.com)
 - **Definitions**: Click on any found word to see its definition (powered by Free Dictionary API).
 - **Pangram Detection**: Highlights words that use all 7 letters.
 
@@ -41,6 +42,18 @@ Run the solver script directly:
 ```bash
 python3 solver.py
 ```
+
+### Deployment
+
+#### Render (Recommended)
+1. Fork or clone this repository to your GitHub.
+2. Log in to [Render](https://render.com/).
+3. Click "New +" and select "Web Service".
+4. Connect your GitHub repository.
+5. Render will automatically detect the `render.yaml` file and configure the service.
+6. Click "Create Web Service".
+
+Your app will be live in a few minutes!
 
 ## License
 
